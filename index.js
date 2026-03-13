@@ -5,6 +5,8 @@ const authRouter = require('./routes/authRoutes')
 const User = require('./models/User')
 const Task = require('./models/Task')
 const Role = require('./models/Role')
+const { defaultSeed } = require('./seeders/seeder')
+const userRouter = require('./routes/userRoutes')
 const app = express()
 const port = process.env.PORT || 4000
 
@@ -21,6 +23,7 @@ app.get('/', (req, res) => {
 
 //routes
 app.use('/auth',authRouter)
+app.use('/users',userRouter)
 
 
 
@@ -32,6 +35,7 @@ Task.belongsTo(User)
 //db operations
 // dbconnect()
 // syncDb()
+// defaultSeed()
 
 
 app.listen(port, () => {
