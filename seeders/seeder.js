@@ -1,4 +1,5 @@
-const Role = require("../models/Role")
+const Role = require("../models/Role");
+const Task = require("../models/Task");
 const User = require("../models/User")
 const bcrypt = require('bcrypt');
 
@@ -12,7 +13,12 @@ const user2= await User.create({name:"Employee User" , email:'employee@email.com
 }
 
 async function testSeed() {
-    
+ const task1= await Task.create({title:"first task",description:"abc sinfasdj fjsadf asfd"})   
+ const task2= await Task.create({title:"Second task",description:"abc sinfasdj fjsadf asfd"})   
+ const task3= await Task.create({title:"Third task",description:"abc sinfasdj fjsadf asfd"})   
+ const task4= await Task.create({title:"Fourth task",description:"abc sinfasdj fjsadf asfd"})   
+ const task5= await Task.create({title:"Fifth task",description:"abc sinfasdj fjsadf asfd"})   
+ const task6= await Task.create({title:"Sixth task",description:"abc sinfasdj fjsadf asfd", UserId:2})   
 }
 
 module.exports={defaultSeed,testSeed}

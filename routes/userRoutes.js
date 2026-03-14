@@ -6,11 +6,11 @@ const router= express.Router()
 
 
 router.get('/',jwtcheck,
-    // isAdmin,
+    isAdmin,
     getAllUsers)
 router.put('/update',jwtcheck,updateUserbyEmail)
 router.delete('/:id',jwtcheck,
-    // isAdmin,
+    isAdmin,
     deleteUserbyId)
 router.get('/:id',jwtcheck,getSingleUserbyId)
 
